@@ -64,14 +64,14 @@ public class StarFragment extends Fragment {
         StarBean infoBean= (StarBean) bundle.getSerializable("info");
         mDatas = infoBean.getStarinfo(); //获取关于集合的数据
         //创建设配器
-         starBaseAdapter  = new StarBaseAdapter(getContext(), mDatas);
-         starGv.setAdapter(starBaseAdapter);
-         initPage(); 
-         setVPListener();
-         setGVListener();
-         //3秒钟切换滑动
-         handler.sendEmptyMessageDelayed(1,3000);
-         return view;
+        starBaseAdapter  = new StarBaseAdapter(getContext(), mDatas);
+        starGv.setAdapter(starBaseAdapter);
+        initPage();
+        setVPListener();
+        setGVListener();
+        //3秒钟切换滑动
+        handler.sendEmptyMessageDelayed(1,3000);
+        return view;
     }
 
      /**
