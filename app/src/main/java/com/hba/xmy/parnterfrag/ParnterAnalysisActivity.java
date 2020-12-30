@@ -1,4 +1,4 @@
-﻿package com.hba.xmy.parnterfrag;
+package com.hba.xmy.parnterfrag;
 
 import androidx.appcompat.app.AppCompatActivity;
 
