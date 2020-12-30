@@ -1,4 +1,4 @@
-﻿package com.hba.xmy.luckfrag;
+package com.hba.xmy.luckfrag;
 
 import lombok.Data;
 
@@ -12,6 +12,12 @@ public class LuckItemBean {
     private String title;
     private String content;
     private int colorId;
+
+    public LuckItemBean(String title, String content, int colorId) {
+        this.title = title;
+        this.content = content;
+        this.colorId = colorId;
+    }
 
     public String getTitle() {
         return title;

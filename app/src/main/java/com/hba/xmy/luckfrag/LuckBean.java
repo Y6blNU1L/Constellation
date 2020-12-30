@@ -1,4 +1,4 @@
-﻿package com.hba.xmy.luckfrag;
+package com.hba.xmy.luckfrag;
 
 import java.util.List;
 

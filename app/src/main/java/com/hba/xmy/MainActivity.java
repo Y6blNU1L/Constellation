@@ -8,9 +8,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hba.xmy.bean.StarBean;
+import com.hba.xmy.luckfrag.LuckAnalysisActivity;
 import com.hba.xmy.luckfrag.LuckFragment;
 import com.hba.xmy.mefrag.MeFragment;
 import com.hba.xmy.parnterfrag.PartnerFragment;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         meFrag.setArguments(bundle);
 //        Fragment动态加载 add/hide/show
         addFragment();
-
+        Toast.makeText(this,"欢迎使用星座缘app~~",Toast.LENGTH_SHORT).show();
     }
 
     //读取assets文件夹下的文件

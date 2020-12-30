@@ -1,43 +1,43 @@
 package com.hba.xmy.utils;
 
-import java.io.ByteArrayOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class HttpUtils {
-
     public static String getJSONFromNet(String path){
         String json = "";
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        1.将路径转换成url对象
         try {
             URL url = new URL(path);
-//            2.获取网络连接对象
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//            3.开始连接
             conn.connect();
-//            4.读取输入流当中内容
-            InputStream is = conn.getInputStream();
-//            5.读取流
-            int hasRead = 0;
-            byte[]buf = new byte[1024];
-//            循环读取
-            while (true){
-                hasRead = is.read(buf);
-                if (hasRead == -1) {
-                    break;
-                }
-                baos.write(buf,0,hasRead);
+            int responseCode = conn.getResponseCode();
+            if(responseCode == HttpURLConnection.HTTP_OK) {
+                InputStream is = conn.getInputStream();
+                json = is2String(is);//将流转换为字符串。
             }
-            is.close();
-            json = baos.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return json;
+    }
+
+    public static String is2String(InputStream is) throws IOException {
+        //连接后，创建一个输入流来读取response
+        BufferedReader bufferedReader = new BufferedReader(new
+                InputStreamReader(is,"utf-8"));
+        String line = "";
+        StringBuilder stringBuilder = new StringBuilder();
+        String response = "";
+        //每次读取一行，若非空则添加至 stringBuilder
+        while((line = bufferedReader.readLine()) != null){
+            stringBuilder.append(line);
+        }
+        //读取所有的数据后，赋值给 response
+        response = stringBuilder.toString().trim();
+        return response;
     }
 }

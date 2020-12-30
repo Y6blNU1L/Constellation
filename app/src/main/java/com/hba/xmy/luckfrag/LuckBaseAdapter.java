@@ -52,19 +52,19 @@ public class LuckBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHodler hodler=null;
+        ViewHodler holder=null;
         if(convertView ==null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_luck_gv, null);
-            hodler = new ViewHodler(convertView);
-            convertView.setTag(hodler);
+            holder = new ViewHodler(convertView);
+            convertView.setTag(holder);
         }else{
-            hodler=(ViewHodler)convertView.getTag();
+            holder=(ViewHodler)convertView.getTag();
         }
         //获取定位数据
         StarBean.StarinfoBean bean=mDatas.get(position);
-        hodler.starTv.setText(bean.getName());
+        holder.starTv.setText(bean.getName());
         Bitmap bitmap = contentlogoImgMap.get(bean.getLogoname());
-        hodler.starIv.setImageBitmap(bitmap);
+        holder.starIv.setImageBitmap(bitmap);
         return convertView;
     }
 

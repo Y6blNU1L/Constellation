@@ -21,6 +21,7 @@ public class URLContent {
 //    星座运势接口
     public static String getLuckURL(String name){
         String enName=getEnglishName(name);
+        System.out.println("enName=====>"+enName);
 //        try {
 //            enName = URLEncoder.encode(enName,"UTF-8");
 //        } catch (UnsupportedEncodingException e) {
@@ -53,40 +54,40 @@ public class URLContent {
          * pisces 双鱼座。
          */
         String enName="";
-        if (cnName=="白羊座"){
+        if (cnName.equals("白羊座")){
             enName="aries";
         }
-        if (cnName=="金牛座"){
+        if (cnName.equals("金牛座")){
             enName="taurus";
         }
-        if (cnName=="双子座"){
+        if (cnName.equals("双子座")){
             enName="gemini";
         }
-        if (cnName=="巨蟹座"){
+        if (cnName.equals("巨蟹座")){
             enName="cancer";
         }
-        if (cnName=="狮子座"){
+        if (cnName.equals("狮子座")){
             enName="leo";
         }
-        if (cnName=="处女座"){
+        if (cnName.equals("处女座")){
             enName="virgo";
         }
-        if (cnName=="天秤座"){
+        if (cnName.equals("天秤座")){
             enName="libra";
         }
-        if (cnName=="天蝎座"){
+        if (cnName.equals("天蝎座")){
             enName="scorpio";
         }
-        if (cnName=="射手座"){
+        if (cnName.equals("射手座")){
             enName="sagittarius";
         }
-        if (cnName=="摩羯座"){
+        if (cnName.equals("摩羯座")){
             enName="capricorn";
         }
-        if (cnName=="水瓶座"){
+        if (cnName.equals("水瓶座")){
             enName="aquarius";
         }
-        if (cnName=="双鱼座"){
+        if (cnName.equals("双鱼座")){
             enName="pisces";
         }
         return enName;

@@ -12,7 +12,7 @@ public class LoadDataAsyncTask  extends AsyncTask<String,Void,String> {
     private void initDialog(){
         dialog = new ProgressDialog(context);
         dialog.setTitle("提示信息");
-        dialog.setMessage("正在加载中......");
+        dialog.setMessage("数据正在加载中,请稍后......");
     }
     public LoadDataAsyncTask(Context context, OnGetNetDataListener listener,boolean isShowDialog) {
         this.context = context;
@@ -48,7 +48,6 @@ public class LoadDataAsyncTask  extends AsyncTask<String,Void,String> {
         if (isShowDialog) {
             dialog.dismiss();
         }
-
         listener.onSuccess(s);
     }
 }
