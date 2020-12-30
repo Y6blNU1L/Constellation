@@ -35,7 +35,6 @@ public class LuckAnalysisActivity extends AppCompatActivity implements View.OnCl
         String name = intent.getStringExtra("name"); //星座名称
         initView(name);
         String luckURL = URLContent.getLuckURL(name);
-
         mDatas=new ArrayList<>();
         //获取网络请求
         LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
